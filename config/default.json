@@ -1,0 +1,8 @@
+{
+    "logger": {
+        "name": "gsku-node",
+        "level": "info",
+        "toFile": false,
+        "dirLogFile": null
+    }
+}
