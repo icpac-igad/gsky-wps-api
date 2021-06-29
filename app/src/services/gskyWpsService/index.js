@@ -48,10 +48,10 @@ class GskyWPSService {
   }
 
   static async getLayerLatestTime(ctx) {
-    const { layer, data_path, until } = ctx.query;
+    const { namespace, data_path, until } = ctx.query;
 
     const params = {
-      namespace: layer,
+      namespace: namespace,
       timestamps: true,
     };
 

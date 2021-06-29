@@ -34,9 +34,13 @@ class GskyRouter {
 
   static async getLayerLatestTime(ctx) {
     ctx.assert(ctx.query.data_path, 400, "Data path required");
-    ctx.assert(ctx.query.layer, 400, "layer required");
+    ctx.assert(
+      ctx.query.namespace,
+      400,
+      "namespace required. This corresponds to the netcdf variable name"
+    );
 
-    ctx.body = await GskyWPSService.getLayerLatestTime(ctx)
+    ctx.body = await GskyWPSService.getLayerLatestTime(ctx);
   }
 }
 
