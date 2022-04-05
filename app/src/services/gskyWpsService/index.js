@@ -73,7 +73,7 @@ class GskyWPSService {
         // TODO : catch more errors
 
         if(!data.token){
-          ctx.throw(400, `data_path '${data_path}' not found`);
+          ctx.throw(404, `data_path '${data_path}' not found`);
         }
 
         const res = { latest_time: null };
