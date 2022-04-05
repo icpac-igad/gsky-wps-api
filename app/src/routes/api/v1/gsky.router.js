@@ -33,7 +33,11 @@ class GskyRouter {
   }
 
   static async getLayerLatestTime(ctx) {
-    ctx.assert(ctx.query.data_path, 400, "Data path required");
+    ctx.assert(
+      ctx.query.data_path,
+      400,
+      "Data path required. This corresponds to the root directory of the netcdf data you want to query in GSKY"
+    );
     ctx.assert(
       ctx.query.namespace,
       400,
