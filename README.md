@@ -1,7 +1,7 @@
 
 # Gsky Node API
 
-Gsky Node API JS like Interface. This service provides an simplified way to make WPS timeseries queries to gsky, 
+Gsky Node API JS like Interface. This service provides a simplified way to make WPS queries to gsky, 
 by exposing an endpoints that accept json data, serializes the data to XML as expected by GSKY and parses the response from GSKY to readable json.
 
 ## Dependencies
@@ -186,7 +186,7 @@ Response sample
 
 
 ## Production Deployment 
-This service is meant to be deployed together with other gsky related services as 
-described [here](https://github.com/icpac-igad/eahw-gsky) using docker compose.
+This service is meant to be deployed together with other gsky related services, using docker compose as 
+described [here](https://github.com/icpac-igad/eahw-gsky).
 
     
