@@ -1,12 +1,12 @@
 
-# Gsky Node API
+# Gsky WPS API
 
-Gsky Node API JS like Interface. This service provides a simplified way to make WPS queries to gsky, 
-by exposing endpoints that accept json data, serializes the data to XML as expected by GSKY and parses the response from GSKY to readable json.
+This service provides a simplified way to make WPS queries to gsky, 
+by exposing endpoints that accept json data, serializes the data to XML as expected by GSKY WPS queries and parses the response from GSKY to readable JSON.
 
 ## Dependencies
 
-The Gsky Node JS service is built using [Node.js](https://nodejs.org/en/), and can be executed either natively or using Docker, each of which has its own set of requirements.
+The Gsky WPS API service is built using [Node.js](https://nodejs.org/en/), and can be executed either natively or using Docker, each of which has its own set of requirements.
 
 Native execution requires:
 - [Node.js](https://nodejs.org/en/)
@@ -20,7 +20,7 @@ Execution using Docker requires:
 Start by cloning the repository from github to your execution environment
 
 ```
-git clone https://github.com/icpac-igad/gsky-node.git && cd gsky-node
+git clone https://github.com/icpac-igad/gsky-wps-api.git && cd gsky-wps-api
 ```
 
 After that, follow one of the instructions below:
@@ -51,11 +51,11 @@ After that, follow one of the instructions below:
 
 2. Build the image
 
-    `docker build -t gsky_node .`
+    `docker build -t gsky_wps_api .`
 
 3. Run the service
 
-`docker run --env-file ./.env -p 3000:3000 gsky_node`
+`docker run --env-file ./.env -p 3000:3000 gsky_wps_api`
 
 
 ## Environment Variables
