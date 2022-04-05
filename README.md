@@ -2,7 +2,7 @@
 # Gsky Node API
 
 Gsky Node API JS like Interface. This service provides a simplified way to make WPS queries to gsky, 
-by exposing an endpoints that accept json data, serializes the data to XML as expected by GSKY and parses the response from GSKY to readable json.
+by exposing endpoints that accept json data, serializes the data to XML as expected by GSKY and parses the response from GSKY to readable json.
 
 ## Dependencies
 
@@ -98,11 +98,11 @@ Response Sample
 | `start_datetime` | `string` | **Optional**. The start date to limit the data to. Must be in format `yyyy-MM-ddTHH:mm`. For example `2020-09-08T00:00`|
 | `end_datetime` | `string` | **Optional**. The end date to limit the data to. Must be in format `yyyy-MM-ddTHH:mm`. For example `2022-02-22T00:00` |
 
-Json Body Data -  `Required`
+**Json Body Data** -  `Required`
 
-This should be a `geojson` feature collection with one feature that is either a point, polygon ro multipolygon
+This should be a `geojson` feature collection with one feature that is either a point, polygon or multipolygon
 
-Point POST data example
+Point data sample
 ```json
 {
     "type": "FeatureCollection",
@@ -121,7 +121,7 @@ Point POST data example
 }
 ```
 
-Polygon Post Data example
+Polygon data sample
 ```json
 {
     "type": "FeatureCollection",
