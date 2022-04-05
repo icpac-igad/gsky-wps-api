@@ -1,8 +1,8 @@
 
 # Gsky WPS API
 
-This service provides a simplified way to make WPS queries to gsky, 
-by exposing endpoints that accept json data, serializes the data to XML as expected by GSKY WPS queries and parses the response from GSKY to readable JSON.
+This service provides a simplified way to make WPS related queries to [gsky](https://github.com/nci/gsky), 
+by providing endpoints that accept json data, serializes the data to XML as expected by GSKY WPS queries and parses the response from GSKY to readable JSON, so that you don't have to do this on your frontend.
 
 ## Dependencies
 
