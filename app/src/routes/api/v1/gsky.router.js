@@ -1,7 +1,11 @@
 const Router = require("koa-router");
 const isEmpty = require("lodash/isEmpty");
 const GskyWPSService = require("services/gskyWpsService");
-const { isValidGeojsonPoint, isValidGeojsonPolygon } = require("utils/core");
+const {
+  isValidGeojsonPoint,
+  isValidGeojsonPolygon,
+  isValidGeojsonMultiPolygon,
+} = require("utils/core");
 
 const router = new Router({
   prefix: "/gsky",
@@ -20,7 +24,8 @@ class GskyRouter {
     // check if point or polygon
     ctx.assert(
       isValidGeojsonPoint(ctx.request.body) ||
-        isValidGeojsonPolygon(ctx.request.body),
+        isValidGeojsonPolygon(ctx.request.body) ||
+        isValidGeojsonMultiPolygon(ctx.request.body),
       400,
       "Invalid feature"
     );

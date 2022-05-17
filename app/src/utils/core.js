@@ -22,4 +22,18 @@ const isValidGeojsonPolygon = (geojson) => {
   }
 };
 
-module.exports = { defined, isValidGeojsonPoint, isValidGeojsonPolygon };
+const isValidGeojsonMultiPolygon = (geojson) => {
+  try {
+    collectionOf(geojson, "MultiPolygon", "validator");
+    return true;
+  } catch (error) {
+    return false;
+  }
+};
+
+module.exports = {
+  defined,
+  isValidGeojsonPoint,
+  isValidGeojsonPolygon,
+  isValidGeojsonMultiPolygon,
+};
