@@ -52,7 +52,7 @@ const fetchWPSTimeSeries = (url, parameters) => {
     const xml = response.data;
     const json = xml2json(xml);
     const processOutputs = json.ProcessOutputs;
-    let outputs = processOutputs;
+    let outputs = processOutputs.Output;
 
     if (!Array.isArray(outputs)) {
       outputs = [outputs];
