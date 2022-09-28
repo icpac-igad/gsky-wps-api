@@ -43,7 +43,7 @@ class GskyWPSService {
       const data = await fetchWPSTimeSeries(GSKY_OWS_URL, parameters);
       return data;
     } catch (error) {
-      ctx.throw(400, error.response.data);
+      ctx.throw(400, error);
     }
   }
 
@@ -57,8 +57,8 @@ class GskyWPSService {
 
     if (until) {
       params.until = until;
-    }else{
-      // set a date far away. Gsky by default cuts dates up to today. 
+    } else {
+      // set a date far away. Gsky by default cuts dates up to today.
       // But Sometimes we want to include data for future dates
       params.until = "2050-01-01";
     }
@@ -72,17 +72,17 @@ class GskyWPSService {
 
         // TODO : catch more errors
 
-        if(!data.token){
+        if (!data.token) {
           ctx.throw(404, `data_path '${data_path}' not found`);
         }
 
         const res = { latest_time: null };
 
         if (data && data.timestamps && !!data.timestamps.length) {
-          res.latest_time = data.timestamps[data.timestamps.length - 1]
+          res.latest_time = data.timestamps[data.timestamps.length - 1];
         }
 
-        return res
+        return res;
       });
 
     return latest_time;

@@ -55,7 +55,7 @@ async function init() {
     // load routes
     loader.loadRoutes(app);
 
-    const port = 3000;
+    const port = process.env.PORT || 3000;
 
     const server = app.listen(port, () => {
       logger.info("Server started in ", port);
