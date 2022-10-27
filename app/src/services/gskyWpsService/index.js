@@ -6,6 +6,8 @@ const GSKY_MAS_URL = process.env.GSKY_MAS_URL;
 
 class GskyWPSService {
   static async wpsGeometryDrill(query, geojson, ctx) {
+    let url = GSKY_OWS_URL;
+
     const parameters = {
       identifier: query.identifier,
       storeExecuteResponse: true,
@@ -39,8 +41,12 @@ class GskyWPSService {
       });
     }
 
+    if (query.ows_namespace) {
+      url = url + `/${query.ows_namespace}`;
+    }
+
     try {
-      const data = await fetchWPSTimeSeries(GSKY_OWS_URL, parameters);
+      const data = await fetchWPSTimeSeries(url, parameters);
       return data;
     } catch (error) {
       ctx.throw(400, error);
